@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:300,400,600,700&amp;lang=en");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Dispolay", sans-serif;
+}
+
+body {
+  margin: 0;
+  /* align-content: center; */
+  font-weight: normal;
+  font-size: 18px;
+  color: #000000;
+  background-color: #fcfcfc;
+}
+
+.container-smart {
+  max-width: 1500px;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 5px;
+  text-align: center;
+}
+
+nav {
+  float: left;
+  width: 25%;
+  height: 100vh;
+  background: #e3f2f6;
+  padding: 20px;
+  margin: 20 auto;
+  vertical-align: top;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  padding-left: 50px;
+  height: 100vh;
+  width: 75%;
+  background-color: #ffffff;
+  vertical-align: top;
+}
+
+.mainMenu {
+  font-family: "Red Hat Display";
+  font-weight: 400;
+  color: #222222;
+  font-size: 20px;
+}
+
+.mainMenu:hover {
+  color: #48a7c1;
+}
+
+#imgDashboard:hover {
+  content: url("images/dashboard-01.png");
+}
+
+#imgAccount:hover {
+  content: url("images/account-01.png");
+}
+
+#imgExchange:hover {
+  content: url("images/exchange-01.png");
+}
+
+#imgRecipients:hover {
+  content: url("images/recipients-01.png");
+}
+
+#imgRewards:hover {
+  content: url("images/rewards-01.png");
+}
+
+section {
+  background-color: #efefef;
+  margin-top: 0px;
+}
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+  vertical-align: bottom;
+}
+
+.sectionPages {
+  background-color: #fefefe;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.light-table {
+  font-family: "Red Hat Display";
+  background-color: transparent;
+  color: #272727;
+}
+
+h1 {
+  font-size: 50pt;
+  color: black;
+  font-display: block;
+  font-weight: 700;
+  padding-top: 0;
+}
+
+h2 {
+  font-family: "Red Hat Display";
+  font-size: 40px;
+  font-weight: bolder;
+  color: #48a7c1;
+}
+
+h3 {
+  font-family: "Red Hat Display";
+  font-size: 35px;
+  font-weight: 300;
+  color: #272727;
+}
+
+h4 {
+  font-family: "Red Hat Display";
+  font-size: 24px;
+  font-weight: bold;
+  color: #272727;
+}
+
+.subtitle {
+  font-family: "Red Hat Display";
+  font-display: auto;
+  font-weight: bold;
+  font-size: 20px;
+  color: #48a7c1;
+}
+
+p {
+  font-family: "Red Hat Display";
+  font-display: auto;
+  font-weight: normal;
+  font-size: 18px;
+  color: #222222;
+}
+
+.italic {
+  font-family: "Red Hat Display";
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.italic-blue {
+  font-family: "Red Hat Display";
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  color: #48a7c1;
+}
+
+.myLable {
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  color: #272727;
+  font-weight: 400;
+}
+
+.lblError {
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  color: red;
+  font-weight: 400;
+}
+
+.bFrame {
+  font-family: "Red Hat Display";
+  border-color: #272727;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+.error {
+  font-family: "Red Hat Display";
+  border-color: red;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+input::placeholder {
+  font-family: "Red Hat Display";
+  font-weight: 300;
+  opacity: 0.3;
+  color: #b0b0b0;
+}
+
+.btnShowHide {
+  font-family: "Red Hat Display";
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: underline;
+  border: 0px;
+  float: inline-end;
+  padding: 0;
+}
+
+.labelError {
+  font-family: "Red Hat Display";
+  color: red;
+  display: none;
+  font-size: 14px;
+}
+
+.myBtn {
+  font-family: "Red Hat Display";
+  color: #ffffff;
+  background-color: #48a7c1;
+  font-weight: bold;
+  padding: 0;
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+  transition: all 0.3s ease;
+}
+
+.myBtn:hover {
+  color: #ffffff;
+  background-color: #429ab3;
+}
+
+.user-dropdown {
+  color: #000000;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 18px;
+  align-content: flex-end;
+  border: none;
+}
+
+.user-dropdown:hover {
+  color: #48a7c1;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #777777;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.titleHR {
+  width: 30px;
+  border-width: 5px;
+  border-color: #48a7c1;
+  padding: 5px;
+}
+
+div {
+  font-display: auto;
+  font-weight: normal;
+  font-size: 20px;
+  color: #777777;
+}
+
+.titleLight {
+  font-family: "Red Hat Display";
+  color: #48a7c1;
+  font-weight: lighter;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+a {
+  font-size: 16px;
+  color: #48a7c1;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #429ab3;
+}
+
+.copyright {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Loader */
+#overlay {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+}
+
+.chemp {
+  color: #48a7c1;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.bg-forms {
+  background-color: #e3f2f6;
+  border: 0;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #ffffff,
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+  }
+
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
+      1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+  }
+
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff,
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff,
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff,
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff,
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff,
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
