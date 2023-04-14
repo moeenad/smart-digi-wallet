@@ -144,7 +144,15 @@
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
-                            USER NAME
+                          <?php
+                            session_start();
+                            if(isset($_SESSION['fullname'])){
+                                echo $_SESSION['fullname'];
+                                //echo $fullname;
+                            } else {
+                                header('Location:login.php');
+                            }
+                            ?>
                           </a>
                           <div
                             class="dropdown-menu"
@@ -161,28 +169,6 @@
                       </ul>
                     </div>
                   </div>
-
-                  <!-- <button
-                    type="button"
-                    class="bi bi-person-circle user-dropdown dropdown-toggle"
-                    id="dropdownMenuButton1"
-                  >
-                    USER NAME
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Change Password</a>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Logout</a>
-                    </li>
-                  </ul> -->
-                  <!-- end of user drop down button  -->
                 </div>
               </div>
               <div class="row" style="margin-top: 50px">
