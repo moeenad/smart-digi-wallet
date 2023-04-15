@@ -292,40 +292,23 @@
                     <th scope="col">Date</th>
                     <th scope="col" width="50%">Transaction</th>
                     <th scope="col" class="text-end">Amount</th>
-                    <th scope="col" class="text-end">Balance</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php
+                    include ('connection.php');
+                    $sql = "SELECT * FROM transactions WHERE customerId = $id";
+                    $resultSet = mysqli_query($conn, $sql);
+                    while ($data = mysqli_fetch_array($resultSet)){
+                  ?>
                   <tr>
-                    <td>20 Feb 2023</td>
-                    <td>Transaction #12345 From your CAD balance</td>
-                    <td class="text-end">20.00</td>
-                    <td class="text-end">1830.35</td>
+                    <td><?php echo $data['date'] ?></td>
+                    <td><?php echo "Transaction #" . $data['transId'] . " From your " . $data['accountType'] . " balance" ?> </td>
+                    <td class="text-end"><?php echo $data['amount'] ?></td>
                   </tr>
-                  <tr>
-                    <td>20 Feb 2023</td>
-                    <td>Transaction #12345 From your CAD balance</td>
-                    <td class="text-end">150.00</td>
-                    <td class="text-end">1850.35</td>
-                  </tr>
-                  <tr>
-                    <td>19 Feb 2023</td>
-                    <td>Transaction #12345 From your USA balance</td>
-                    <td class="text-end">230.00</td>
-                    <td class="text-end">530.70</td>
-                  </tr>
-                  <tr>
-                    <td>18 Feb 2023</td>
-                    <td>Transaction #12345 From your USA balance</td>
-                    <td class="text-end">10.00</td>
-                    <td class="text-end">760.70</td>
-                  </tr>
-                  <tr>
-                    <td>16 Feb 2023</td>
-                    <td>Transaction #12345 From your CAD balance</td>
-                    <td class="text-end">30.00</td>
-                    <td class="text-end">2000.35</td>
-                  </tr>
+                  <?php
+                   }
+                ?>
                 </tbody>
               </table>
             </div>
