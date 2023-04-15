@@ -2,6 +2,7 @@
    session_start(); 
    if(isset( $_SESSION['fullname'])) {
     $msg = $_SESSION['fullname'];
+    $id = $_SESSION['customerId'];
    }else {
       header("login.php");
    } 
@@ -163,7 +164,7 @@
                               >Change Password</a
                             >
                             <hr />
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="login.php">Logout</a>
                           </div>
                         </li>
                       </ul>
@@ -206,14 +207,19 @@
             <div class="row">
               <!-- <h4>Accounts Details</h4> -->
               <table class="table table-borderless light-table">
+                <?php
+                  include ('connection.php');
+                  $sql = "SELECT * FROM accounts WHERE customerId = $id";
+                  $resultSet = mysqli_query($conn, $sql);
+                  while ($data = mysqli_fetch_array($resultSet)){
+                ?>
                 <tr>
-                  <td><b>CAD account</b><br /><i>1234567890</i></td>
-                  <td class="text-end"><br />$1830.35</td>
+                  <td><b><?php echo $data['accountType'] . " ACCOUNT"?></b><br /><i><?php echo $data['accountNo'] ?></i></td>
+                  <td class="text-end"><br /><?php echo $data['balance'] ?></td>
                 </tr>
-                <tr>
-                  <td><b>USD account</b><br /><i>1234567890</i></td>
-                  <td class="text-end"><br />$530.70</td>
-                </tr>
+                <?php
+                   }
+                ?>
               </table>
 
               <div class="row bg-forms">

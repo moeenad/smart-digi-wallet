@@ -1,3 +1,9 @@
+<?php
+session_start(); 
+  if(isset( $_SESSION['fullname'])) {
+  unset($_SESSION['fullname']);
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>

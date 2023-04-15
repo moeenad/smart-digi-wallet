@@ -14,7 +14,7 @@ if(isset($_POST["login"])) {
         $fullname = $row['firstName'] . ' ' . $row['lastName'];
         $customerId = $row['customerId'];     
         $_SESSION['fullname'] = $fullname;
-        // echo "Fullname set: " . $_SESSION['fullname']; // Debug statement
+        $_SESSION['customerId'] = $customerId;
         header('Location:dashboard.php');
     } else {
         header('Location:login.php');
