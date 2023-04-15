@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('connection.php');
 if(isset($_POST["login"])) {
     $username = stripcslashes($_POST["userName"]);
@@ -8,15 +9,13 @@ if(isset($_POST["login"])) {
     $sql = "SELECT * FROM customer WHERE email='$username' and password='$password'";
     $resultSet = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($resultSet);
-    if($count == 1){
+    if ($count == 1) {
         $row = mysqli_fetch_assoc($resultSet);
         $fullname = $row['firstName'] . ' ' . $row['lastName'];
-        $customerId = $row['customerId'];
-        session_start();
+        $customerId = $row['customerId'];     
         $_SESSION['fullname'] = $fullname;
+        // echo "Fullname set: " . $_SESSION['fullname']; // Debug statement
         header('Location:dashboard.php');
-        // echo $fullname;
-        // echo $customerId;
     } else {
         header('Location:login.php');
     }

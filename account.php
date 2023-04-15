@@ -43,7 +43,7 @@
             <br /><br />
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link mainMenu" href="dashboard.html"
+                <a class="nav-link mainMenu" href="dashboard.php"
                   ><img
                     id="imgDashboard"
                     src="images/dashboard-02.png"

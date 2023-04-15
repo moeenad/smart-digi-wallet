@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+   session_start(); 
+   if(isset( $_SESSION['fullname'])) {
+    $msg = $_SESSION['fullname'];
+   }else {
+      header("login.php");
+   } 
+?>
+<!DOCTYPE>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -68,7 +76,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mainMenu" href="account.html">
+                <a class="nav-link mainMenu" href="account.php">
                   <img
                     id="imgAccount"
                     src="images/account-02.png"
