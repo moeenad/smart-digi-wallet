@@ -45,6 +45,18 @@ session_start();
                   alt="Smart Logo"
                 />
                 <br /><br />
+                <?php
+                  if(isset($_SESSION['create'])){
+                ?>
+                <div class="alert alert-success italic">
+                <?php 
+                  echo $_SESSION['create'];
+                ?>
+                </div>
+                <?php
+                unset($_SESSION['create']);
+                }
+                ?>
                 <form id="myForm" method="post" action="authentication.php">
                   <div class="form-outline mb-4">
                     <div class="myLable" align="left">Email Address</div>
@@ -112,7 +124,7 @@ session_start();
                 <a href="#!">Forgot password?</a>
                 <p class="myLable">
                   Don't have an account?
-                  <a href="register.html">Register here</a>
+                  <a href="register.php">Register here</a>
                 </p>
                 <a href="#" class="text-muted">Terms of use</a>
                 <span class="mylabel text-muted">|</span>
