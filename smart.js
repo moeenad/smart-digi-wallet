@@ -237,57 +237,6 @@ function showPage() {
 // Describtion : Change style sheet to switch between Day/Night Mode
 //-------------------------------------------------------------
 
-// function toggleCss() {
-//   let stylesheet = document.getElementById("mystyel");
-//   if (stylesheet.getAttribute("href") === "style.css") {
-//     stylesheet.setAttribute("href", "styledark.css");
-//     document
-//       .getElementById("day-night-mode")
-//       .setAttribute("src", "images/nightmode.png");
-//     document
-//       .getElementById("smart-logo")
-//       .setAttribute("src", "images/smart-logo-02.png");
-//     document
-//       .getElementById("imgDashboard")
-//       .setAttribute("src", "images/dashboard-03.png");
-//     document
-//       .getElementById("imgAccount")
-//       .setAttribute("src", "images/account-03.png");
-//     document
-//       .getElementById("imgExchange")
-//       .setAttribute("src", "images/exchange-03.png");
-//     document
-//       .getElementById("imgRecipients")
-//       .setAttribute("src", "images/recipients-03.png");
-//     document
-//       .getElementById("imgRewards")
-//       .setAttribute("src", "images/rewards-03.png");
-//   } else {
-//     stylesheet.setAttribute("href", "style.css");
-//     document
-//       .getElementById("day-night-mode")
-//       .setAttribute("src", "images/daymode.png");
-//     document
-//       .getElementById("smart-logo")
-//       .setAttribute("src", "images/smart-logo-01.png");
-//     document
-//       .getElementById("imgDashboard")
-//       .setAttribute("src", "images/dashboard-02.png");
-//     document
-//       .getElementById("imgAccount")
-//       .setAttribute("src", "images/account-02.png");
-//     document
-//       .getElementById("imgExchange")
-//       .setAttribute("src", "images/exchange-02.png");
-//     document
-//       .getElementById("imgRecipients")
-//       .setAttribute("src", "images/recipients-02.png");
-//     document
-//       .getElementById("imgRewards")
-//       .setAttribute("src", "images/rewards-02.png");
-//   }
-// }
-
 function toggleCss() {
   let stylesheet = document.getElementById("mystyel");
   if (stylesheet.getAttribute("href") === "style.css") {

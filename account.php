@@ -9,22 +9,6 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-      integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-      integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-      crossorigin="anonymous"
-    ></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
@@ -41,6 +25,7 @@
     <script src="smart.js" async></script>
     <title></title>
   </head>
+
   <body>
     <!-- header container -->
 
@@ -58,7 +43,7 @@
             <br /><br />
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link mainMenu" href="dashboard.html"
+                <a class="nav-link mainMenu" href="dashboard.php"
                   ><img
                     id="imgDashboard"
                     src="images/dashboard-02.png"
@@ -68,7 +53,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mainMenu" href="account.html">
+                <a class="nav-link mainMenu" href="#">
                   <img
                     id="imgAccount"
                     src="images/account-02.png"
@@ -117,62 +102,21 @@
           <article>
             <div class="row">
               <div class="col-6">
-                <!-- <span class="bi bi-arrow-left chemp"> DASHBOARD/ ACCOUNT</span> -->
+                <span class="bi bi-arrow-left chemp"> DASHBOARD/ ACCOUNT</span>
               </div>
               <div class="col-6">
                 <div
-                  class="dropdown"
-                  style="display: flex; justify-content: flex-end"
+                  class="btn-group"
+                  style="display: flex; justify-content: flex-end; padding: 0"
                 >
-                  <!-- user drop down button  -->
-                  <div class="navbar navbar-expand-lg" style="padding: 0%">
-                    <button
-                      class="navbar-toggler myBtn user-dropdown"
-                      type="button"
-                      aria-expanded="false"
-                    ></button>
-                    <div
-                      class="collapse navbar-collapse"
-                      id="navbarNavDropdown"
-                    >
-                      <ul class="navbar-nav" style="padding: 0%">
-                        <li class="nav-item dropdown">
-                          <a
-                            class="nav-link bi bi-person-circle dropdown-toggle user-dropdown"
-                            id="navbarDropdownMenuLink"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            USER NAME
-                          </a>
-                          <div
-                            class="dropdown-menu"
-                            aria-labelledby="navbarDropdownMenuLink"
-                          >
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#"
-                              >Change Password</a
-                            >
-                            <hr />
-                            <a class="dropdown-item" href="#">Logout</a>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <!-- <button
+                  <button
                     type="button"
                     class="bi bi-person-circle user-dropdown dropdown-toggle"
-                    id="dropdownMenuButton1"
+                    aria-expanded="false"
                   >
                     USER NAME
                   </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
+                  <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Change Password</a>
@@ -181,13 +125,14 @@
                     <li>
                       <a class="dropdown-item" href="#">Logout</a>
                     </li>
-                  </ul> -->
-                  <!-- end of user drop down button  -->
+                  </ul>
                 </div>
               </div>
               <div class="row" style="margin-top: 50px">
-                <div class="col-8 mt-auto">
-                  <span class="titleLight">DASHBOARD</span>
+                <div class="col-8">
+                  <span class="subtitle">Current Balance</span>
+                  <h2>1,830.35 CAD</h2>
+                  <span class="italic-blue"><i>1234567890</i></span>
                 </div>
                 <div class="col-1 mt-auto">
                   <center>
@@ -203,13 +148,13 @@
                 </div>
                 <div class="col-1 mt-auto">
                   <center>
-                    <img src="images/sendmoney.png" width="50px" /><br />
+                    <img src="images/sendmoney.png" width="50px" />
                     <a href="#">SEND</a>
                   </center>
                 </div>
                 <div class="col-1 mt-auto">
                   <center>
-                    <img src="images/paybill.png" width="50px" /><br />
+                    <img src="images/paybill.png" width="50px" />
                     <a href="#">BILLS</a>
                   </center>
                 </div>
@@ -218,78 +163,40 @@
             <div><hr /></div>
             <br />
             <div class="row">
-              <!-- <h4>Accounts Details</h4> -->
+              <h4>Accounts Details</h4>
               <table class="table table-borderless light-table">
-                <tr>
-                  <td><b>CAD account</b><br /><i>1234567890</i></td>
-                  <td class="text-end"><br />$1830.35</td>
-                </tr>
-                <tr>
-                  <td><b>USD account</b><br /><i>1234567890</i></td>
-                  <td class="text-end"><br />$530.70</td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th scope="col">CAD account #</th>
+                    <th scope="col">Available Balance</th>
+                    <th scope="col">Transaction Limit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1234567890</td>
+                    <td>$1830.35</td>
+                    <td>2,000.00</td>
+                  </tr>
+                </tbody>
               </table>
-
-              <div class="row bg-forms">
-                <div class="col-4">
-                  <label class="myLable">You send</label>
-
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      id="input-exchange-01"
-                      class="form-control form-control-md bFrame"
-                      style="width: 70%; height: 45px"
-                    />
-                    <select
-                      class="form-select form-select-md bFrame"
-                      id="lbl-currency-01"
-                      style="
-                        width: 30%;
-                        background-color: #48a7c1;
-                        color: #ffffff;
-                        font-weight: bold;
-                        height: 45px;
-                      "
-                    >
-                      <option selected>CAD</option>
-                      <option value="2">USD</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <label class="myLable">Recipient receives</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      id="input-exchange-01"
-                      class="form-control form-control-md bFrame"
-                      style="width: 70%; height: 45px"
-                    />
-                    <select
-                      class="form-select form-select-md bFrame"
-                      id="lbl-currency-01"
-                      style="
-                        width: 30%;
-                        background-color: #48a7c1;
-                        color: #ffffff;
-                        font-weight: bold;
-                        height: 45px;
-                      "
-                    >
-                      <option selected>CAD</option>
-                      <option value="2">USD</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <br /><button class="myBtn">GET THIS RATE</button>
-                </div>
-                <div>
-                  <br />
-                  <p>Guaranteed rate (72 hrs)</p>
-                </div>
-              </div>
+              <hr />
+              <table class="table table-borderless light-table">
+                <thead>
+                  <tr>
+                    <th scope="col">USA account #</th>
+                    <th scope="col">Available Balance</th>
+                    <th scope="col">Transaction Limit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1234567890</td>
+                    <td>$530.70</td>
+                    <td>1,000.00</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <br /><br /><br />
             <div class="row">
@@ -313,26 +220,26 @@
                   <tr>
                     <td>20 Feb 2023</td>
                     <td>Transaction #12345 From your CAD balance</td>
-                    <td class="text-end">150.00</td>
-                    <td class="text-end">1850.35</td>
+                    <td align="right">150.00</td>
+                    <td align="right">1850.35</td>
                   </tr>
                   <tr>
                     <td>19 Feb 2023</td>
                     <td>Transaction #12345 From your USA balance</td>
-                    <td class="text-end">230.00</td>
-                    <td class="text-end">530.70</td>
+                    <td align="right">230.00</td>
+                    <td align="right">530.70</td>
                   </tr>
                   <tr>
                     <td>18 Feb 2023</td>
                     <td>Transaction #12345 From your USA balance</td>
-                    <td class="text-end">10.00</td>
-                    <td class="text-end">760.70</td>
+                    <td align="right">10.00</td>
+                    <td align="right">760.70</td>
                   </tr>
                   <tr>
                     <td>16 Feb 2023</td>
                     <td>Transaction #12345 From your CAD balance</td>
-                    <td class="text-end">30.00</td>
-                    <td class="text-end">2000.35</td>
+                    <td align="right">30.00</td>
+                    <td align="right">2000.35</td>
                   </tr>
                 </tbody>
               </table>

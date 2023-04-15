@@ -46,7 +46,7 @@
                 <h3>Create your account</h3>
                 <p class="italic">All fields are required.</p>
                 <br />
-                <form>
+                <form id="myForm" action="process.php" method="post">
                   <div class="form-outline mb-4">
                     <div class="row">
                       <div class="col-6">
@@ -62,6 +62,7 @@
                         <input
                           type="text"
                           id="typeFirstName"
+                          name="firstName"
                           class="form-control form-control-md bFrame"
                           required
                         />
@@ -71,6 +72,7 @@
                         <input
                           type="text"
                           id="typeLastName"
+                          name="lastName"
                           class="form-control form-control-md bFrame"
                           required
                         />
@@ -106,6 +108,7 @@
                     <input
                       type="email"
                       id="typeRegEmail"
+                      name="email"
                       class="form-control form-control-md bFrame"
                       placeholder="email@domain.com"
                       required
@@ -129,6 +132,7 @@
                         <input
                           type="text"
                           id="typeUnitInput"
+                          name="unit"
                           class="form-control form-control-md bFrame"
                         />
                       </div>
@@ -136,6 +140,7 @@
                         <input
                           type="text"
                           id="typeAddress"
+                          name="address"
                           class="form-control form-control-md bFrame"
                           placeholder="123 Street Name"
                           required
@@ -168,6 +173,7 @@
                         <input
                           type="text"
                           id="typeCity"
+                          name="city"
                           class="form-control form-control-md bFrame"
                           required
                         />
@@ -176,7 +182,7 @@
                         <select
                           class="form-select form-select-md bFrame"
                           id="typeProvenceSelect"
-                          name="Province"
+                          name="province"
                         >
                           <option value="">Select One</option>
                           <optgroup label="Canadian Provinces">
@@ -283,6 +289,7 @@
                         <select
                           class="form-select form-select-md bFrame"
                           id="typeCountrySelect"
+                          name="country"
                         >
                           <option selected>Canada</option>
                           <option value="2">USA</option>
@@ -292,6 +299,7 @@
                         <input
                           type="text"
                           id="typePostal"
+                          name="postal"
                           class="form-control form-control-md bFrame"
                           required
                         />
@@ -329,6 +337,7 @@
                         <input
                           type="text"
                           id="typeTel"
+                          name="tel"
                           class="form-control form-control-md bFrame"
                           placeholder="(999)999-9999"
                         />
@@ -337,6 +346,7 @@
                         <input
                           type="text"
                           id="typeMobile"
+                          name="mobile"
                           class="form-control form-control-md bFrame"
                           placeholder="(999)999-9999"
                           required
@@ -388,6 +398,7 @@
                         <input
                           type="password"
                           id="typeRegPassword"
+                          name="password"
                           class="form-control form-control-md bFrame"
                           required
                         />
@@ -445,6 +456,7 @@
                       type="checkbox"
                       value=""
                       id="checkboxNewsletter"
+                      name="news"
                     />
                     <label class="myLable"
                       >By checking this box, you agree to receive marketing
@@ -456,6 +468,7 @@
                     <button
                       class="btn myBtn mb-4"
                       type="submit"
+                      name="create"
                       onclick="validateRegistration();"
                     >
                       Create Your Acoount
@@ -476,11 +489,13 @@
                   I Already have an account
                 </h3>
                 <hr class="titleHR" />
+                <form id="myForm" method="post" action="authentication.php">
                 <div class="form-outline mb-4">
                   <div align="left" class="myLable">Email</div>
                   <input
                     type="email"
                     id="typeEmail"
+                    name="userName"
                     class="form-control form-control-md bFrame"
                     placeholder="email@domain.com"
                   />
@@ -494,6 +509,7 @@
                   <input
                     type="password"
                     id="typePassword"
+                    name="password"
                     class="form-control form-control-md bFrame"
                   />
                   <label align="left" class="labelError" id="lblPassword">
@@ -514,10 +530,12 @@
                 <button
                   class="btn myBtn mb-4"
                   type="submit"
+                  name="login"
                   onclick="validateEmailPassword()"
                 >
                   Login
                 </button>
+                </form>
               </div>
             </div>
           </div>
