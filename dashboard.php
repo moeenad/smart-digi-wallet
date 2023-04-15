@@ -7,7 +7,7 @@
       header("login.php");
    } 
 ?>
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -48,7 +48,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="smart.js" async></script>
-    <title></title>
+    <title>Smart Digital Wallet - Dashboard</title>
   </head>
   <body>
     <!-- header container -->
@@ -56,7 +56,7 @@
     <div class="container container-smart">
       <div class="row">
         <div class="col-12">
-          <nav>
+        <nav>
             <center>
               <img
                 id="smart-logo"
@@ -67,7 +67,7 @@
             <br /><br />
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link mainMenu" href="dashboard.html"
+                <a class="nav-link mainMenu" href="dashboard.php"
                   ><img
                     id="imgDashboard"
                     src="images/dashboard-02.png"
