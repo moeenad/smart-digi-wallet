@@ -152,15 +152,7 @@
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
-                          <?php
-                            session_start();
-                            if(isset($_SESSION['fullname'])){
-                                echo $_SESSION['fullname'];
-                                //echo $fullname;
-                            } else {
-                                header('Location:login.php');
-                            }
-                            ?>
+                          <?php  echo ( $msg ); ?>
                           </a>
                           <div
                             class="dropdown-menu"
