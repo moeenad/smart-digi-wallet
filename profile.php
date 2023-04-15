@@ -9,7 +9,7 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -48,16 +48,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="smart.js" async></script>
-    <title>Smart Digital Wallet - Account</title>
+    <title>Smart Digital Wallet - Profile</title>
   </head>
-
   <body>
     <!-- header container -->
 
     <div class="container container-smart">
       <div class="row">
         <div class="col-12">
-          <nav>
+        <nav>
             <center>
               <img
                 id="smart-logo"
@@ -127,7 +126,7 @@
           <article>
             <div class="row">
               <div class="col-6">
-                <span class="bi bi-arrow-left chemp"> DASHBOARD/ ACCOUNT</span>
+                <!-- <span class="bi bi-arrow-left chemp"> DASHBOARD/ ACCOUNT</span> -->
               </div>
               <div class="col-6">
                 <div
@@ -174,19 +173,17 @@
                 </div>
               </div>
               <div class="row" style="margin-top: 50px">
-                <div class="col-8">
+                <div class="col-8 mt-auto">
                   <?php
                     include ('connection.php');
-                    $sql = "SELECT * FROM accounts WHERE customerId = $id and accountType = 'CAD'";
+                    $id = $_GET['id'];
+                    if($id){
+                    $sql = "SELECT * FROM customer WHERE customerId = $id";
                     $resultSet = mysqli_query($conn, $sql);
-                    while ($data = mysqli_fetch_array($resultSet)){
+                    while($data = mysqli_fetch_array($resultSet)) {
                   ?>
-                  <span class="subtitle">Current Balance</span>
-                  <h2><?php echo $data['balance'] ?></h2>
-                  <span class="italic-blue"><i><?php echo $data['accountNo'] ?></i></span>
-                  <?php
-                   }
-                ?>
+                  <span class="titleLight">PROFILE OF</span>
+                  <h2> <?php echo $data['firstName'] . ' ' . $data['lastName'] ?></h2>
                 </div>
                 <div class="col-1 mt-auto">
                   <center>
@@ -202,13 +199,13 @@
                 </div>
                 <div class="col-1 mt-auto">
                   <center>
-                    <img src="images/sendmoney.png" width="50px" />
+                    <img src="images/sendmoney.png" width="50px" /><br />
                     <a href="#">SEND</a>
                   </center>
                 </div>
                 <div class="col-1 mt-auto">
                   <center>
-                    <img src="images/paybill.png" width="50px" />
+                    <img src="images/paybill.png" width="50px" /><br />
                     <a href="#">BILLS</a>
                   </center>
                 </div>
@@ -217,61 +214,19 @@
             <div><hr /></div>
             <br />
             <div class="row">
-              <h4>Accounts Details</h4>
-              <table class="table table-borderless light-table">
-                <thead>
-                  <tr>
-                    <th scope="col">account #</th>
-                    <th scope="col">Available Balance</th>
-                    <th scope="col">Transaction Limit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <?php
-                    include ('connection.php');
-                    $sql = "SELECT * FROM accounts WHERE customerId = $id";
-                    $resultSet = mysqli_query($conn, $sql);
-                    while ($data = mysqli_fetch_array($resultSet)){
-                  ?>
-                  <tr>
-                    <td><?php echo $data['accountType'] . " " . $data['accountNo'] ?></td>
-                    <td><?php echo $data['balance'] ?></td>
-                    <td>2,000.00</td>
-                  </tr>
-                  <?php
-                   }
-                ?>
-                </tbody>
-              </table>
-            </div>
-            <br /><br /><br />
-            <div class="row">
-            <h4>Latest Transaction</h4>
-              <table class="table light-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col" width="50%">Transaction</th>
-                    <th scope="col" class="text-end">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                    include ('connection.php');
-                    $sql = "SELECT * FROM transactions WHERE customerId = $id";
-                    $resultSet = mysqli_query($conn, $sql);
-                    while ($data = mysqli_fetch_array($resultSet)){
-                  ?>
-                  <tr>
-                    <td><?php echo $data['date'] ?></td>
-                    <td><?php echo "Transaction #" . $data['transId'] . " From your " . $data['accountType'] . " balance" ?> </td>
-                    <td class="text-end"><?php echo $data['amount'] ?></td>
-                  </tr>
-                  <?php
-                   }
-                ?>
-                </tbody>
-              </table>
+              <p><strong>First Name: </strong><?php echo $data['firstName'] ?></p>
+              <p><strong>Last Name: </strong><?php echo $data['lastName'] ?></p>
+              <p><strong>Email ID: </strong><?php echo $data['email'] ?></p>
+              <p><strong>Address: </strong><?php echo $data['unit'] . " " . $data['address'] . " " . $data['city'] . ", " . $data['province'] . " " . $data['postalCode'] . " " . $data['country']?></p>
+              <p><strong>Tel: </strong><?php echo $data['tel'] ?></p>
+              <p><strong>Mobile: </strong><?php echo $data['mobile'] ?></p>
+            <?php
+              }
+            } else {
+              echo "<p>No client found!</p>";
+            }
+            ?>
+ 
             </div>
           </article>
         </div>
