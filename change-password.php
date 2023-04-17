@@ -48,7 +48,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="smart.js" async></script>
-    <title>Smart Digital Wallet - Dashboard</title>
+    <title>Smart Digital Wallet - Profile</title>
   </head>
   <body>
     <!-- header container -->
@@ -174,7 +174,16 @@
               </div>
               <div class="row" style="margin-top: 50px">
                 <div class="col-8 mt-auto">
-                  <span class="titleLight">DASHBOARD</span>
+                  <?php
+                    $id = $_GET['id'];
+                    if($id){
+                    include('connection.php');
+                      $sql = "SELECT * FROM customer WHERE customerId = $id";
+                      $resultSet = mysqli_query($conn, $sql);
+                      $data = mysqli_fetch_array($resultSet);
+                  ?>
+                  <span class="titleLight">PROFILE OF</span>
+                  <h2> <?php echo $data['firstName'] . ' ' . $data['lastName']?></h2>
                 </div>
                 <div class="col-1 mt-auto">
                   <center>
@@ -203,115 +212,28 @@
               </div>
             </div>
             <div><hr /></div>
-            <br />
-            <div class="row">
-              <!-- <h4>Accounts Details</h4> -->
-              <table class="table table-borderless light-table">
-                <?php
-                  include ('connection.php');
-                  $sql = "SELECT * FROM accounts WHERE customerId = $id";
-                  $resultSet = mysqli_query($conn, $sql);
-                  while ($data = mysqli_fetch_array($resultSet)){
-                ?>
-                <tr>
-                  <td><b><?php echo $data['accountType'] . " ACCOUNT"?></b><br /><i><?php echo $data['accountNo'] ?></i></td>
-                  <td class="text-end"><br /><?php echo $data['balance'] ?></td>
-                </tr>
-                <?php
-                   }
-                ?>
-              </table>
-
-              <div class="row bg-forms">
-                <div class="col-4">
-                  <label class="myLable">You send</label>
-
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      id="input-exchange-01"
-                      class="form-control form-control-md bFrame"
-                      style="width: 70%; height: 45px"
-                    />
-                    <select
-                      class="form-select form-select-md bFrame"
-                      id="lbl-currency-01"
-                      style="
-                        width: 30%;
-                        background-color: #48a7c1;
-                        color: #ffffff;
-                        font-weight: bold;
-                        height: 45px;
-                      "
-                    >
-                      <option selected>CAD</option>
-                      <option value="2">USD</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <label class="myLable">Recipient receives</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      id="input-exchange-01"
-                      class="form-control form-control-md bFrame"
-                      style="width: 70%; height: 45px"
-                    />
-                    <select
-                      class="form-select form-select-md bFrame"
-                      id="lbl-currency-01"
-                      style="
-                        width: 30%;
-                        background-color: #48a7c1;
-                        color: #ffffff;
-                        font-weight: bold;
-                        height: 45px;
-                      "
-                    >
-                      <option selected>CAD</option>
-                      <option value="2">USD</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <br /><button class="myBtn">GET THIS RATE</button>
-                </div>
-                <div>
-                  <br />
-                  <p>Guaranteed rate (72 hrs)</p>
-                </div>
+              <br />
+              <div class="form-outline col-4 mb-4">
+                <h3>Change Password</h3>
+                    <form id="password_form" method="POST" action="process.php">
+                        <label class="myLable" for="new_password">New Password:</label>
+                        <input class="form-control form-control-md bFrame" type="password" id="new_password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{:;?]).{8,}">
+                        <br>
+                        <label class="myLable" for="confirm_password">Confirm Password:</label>
+                        <input class="form-control form-control-md bFrame" type="password" id="confirm_password" name="confirm_password" required>
+                        <input type="hidden" name="id" value="<?php echo $data['customerId'] ?>" />
+                        <br>
+                        <div class="d-flex justify-content-end pt-3">
+                            <input class="btn myBtn mb-4" type="submit" name="changePassword" value="Change Password" onclick="validateForm()">
+                          </div>
+                    </form>
+                    <p id="error_message"></p>   
+                    <?php
+                    }else{
+                      echo "Client does not exist";
+                    }
+                    ?>
               </div>
-            </div>
-            <br /><br /><br />
-            <div class="row">
-              <h4>Latest Transaction</h4>
-              <table class="table light-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col" width="50%">Transaction</th>
-                    <th scope="col" class="text-end">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                    include ('connection.php');
-                    $sql = "SELECT * FROM transactions WHERE customerId = $id";
-                    $resultSet = mysqli_query($conn, $sql);
-                    while ($data = mysqli_fetch_array($resultSet)){
-                  ?>
-                  <tr>
-                    <td><?php echo $data['date'] ?></td>
-                    <td><?php echo "Transaction #" . $data['transId'] . " From your " . $data['accountType'] . " balance" ?> </td>
-                    <td class="text-end"><?php echo $data['amount'] ?></td>
-                  </tr>
-                  <?php
-                   }
-                ?>
-                </tbody>
-              </table>
-            </div>
           </article>
         </div>
       </div>

@@ -20,7 +20,22 @@ if(isset($_POST["create"])){
         $_SESSION['create'] = 'Your account created successfuly. Please login!';
         header("Location:login.php");
     }else{
-        echo "there was an issue in inserting the employee";
+        echo "there was an issue in registring your account";
+    }
+    mysqli_close($conn);
+} 
+
+//change password
+if(isset($_POST["changePassword"])){
+    $id = mysqli_real_escape_string($conn,$_POST["id"]);
+    $password = mysqli_real_escape_string($conn,$_POST["password"]);
+    $sql = "UPDATE customer SET password='$password' WHERE customerId=$id";
+    if(mysqli_query ($conn, $sql)){
+        session_start();
+        $_SESSION['update'] = 'Your password changed successfuly. Please login!';
+        header("Location:login.php");
+    }else{
+        echo "there was an issue updating your password";
     }
     mysqli_close($conn);
 } 

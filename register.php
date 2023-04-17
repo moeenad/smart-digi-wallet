@@ -291,8 +291,8 @@
                           id="typeCountrySelect"
                           name="country"
                         >
-                          <option selected>Canada</option>
-                          <option value="2">USA</option>
+                          <option value="CANADA" selected>Canada</option>
+                          <option value="USA">USA</option>
                         </select>
                       </div>
                       <div class="col-6">

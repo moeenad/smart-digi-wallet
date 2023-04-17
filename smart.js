@@ -301,3 +301,24 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleCss();
   }
 });
+
+//-------------------------------------------------------------
+// Added By    : MOHAMMED ENAD
+// Added On    : 16 April 2023
+// Describtion : Validation change Password Form
+//-------------------------------------------------------------
+
+function validateForm() {
+  console.log("validateForm() called"); // for debugging purposes
+  const new_password = document.getElementById("new_password").value;
+  const confirm_password = document.getElementById("confirm_password").value;
+  if (new_password !== confirm_password) {
+      document.getElementById("error_message").textContent = "Passwords do not match.";
+      return false;
+  } else if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{:;?]).{8,}/.test(new_password)) {
+      document.getElementById("error_message").textContent = "Password must be: minimum 8 characters, One uppercase letter, one lowercase letter, one number, and one special character.";
+      return false;
+  } else {
+      return true;
+  }
+}
