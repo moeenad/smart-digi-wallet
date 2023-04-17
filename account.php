@@ -161,7 +161,7 @@
                             aria-labelledby="navbarDropdownMenuLink"
                           >
                             <a class="dropdown-item" href="profile.php?id=<?php echo $id ?>">Profile</a>
-                            <a class="dropdown-item" href="#"
+                            <a class="dropdown-item" href="change-password.php?id=<?php echo $id ?>"
                               >Change Password</a
                             >
                             <hr />

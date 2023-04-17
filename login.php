@@ -57,6 +57,20 @@ session_start();
                 unset($_SESSION['create']);
                 }
                 ?>
+                <!-- Change password session -->
+                <?php
+                  if(isset($_SESSION['update'])){
+                ?>
+                <div class="alert alert-success italic">
+                <?php 
+                  echo $_SESSION['update'];
+                ?>
+                </div>
+                <?php
+                unset($_SESSION['update']);
+                }
+                ?>
+
                 <form id="myForm" method="post" action="authentication.php">
                   <div class="form-outline mb-4">
                     <div class="myLable" align="left">Email Address</div>
